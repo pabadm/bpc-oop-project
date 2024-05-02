@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BandDatabase" Class="DatabaseClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database\BandDatabase.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="BandDatabaser.Properties.Settings" SettingsPropertyName="BandDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Song" Member="Songs">
+    <Type Name="Song">
+      <Column Name="IdSong" AutoSync="OnInsert" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SongName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Song_BandAlbumSong" Member="BandAlbumSongs" ThisKey="IdSong" OtherKey="IdSong" Type="BandAlbumSong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Album" Member="Albums">
+    <Type Name="Album">
+      <Column Name="IdAlbum" AutoSync="OnInsert" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AlbumName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductionYear" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IdPic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Album_BandAlbumSong" Member="BandAlbumSongs" ThisKey="IdAlbum" OtherKey="IdAlbum" Type="BandAlbumSong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Band" Member="Bands">
+    <Type Name="Band">
+      <Column Name="IdBand" AutoSync="OnInsert" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BandName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FoundationYear" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IdPic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Band_BandAlbumSong" Member="BandAlbumSongs" ThisKey="IdBand" OtherKey="IdBand" Type="BandAlbumSong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BandAlbumSong" Member="BandAlbumSongs">
+    <Type Name="BandAlbumSong">
+      <Column Name="IdBand" AutoSync="OnInsert" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdAlbum" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="IdSong" AutoSync="OnInsert" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Album_BandAlbumSong" Member="Album" ThisKey="IdAlbum" OtherKey="IdAlbum" Type="Album" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Band_BandAlbumSong" Member="Band" ThisKey="IdBand" OtherKey="IdBand" Type="Band" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Song_BandAlbumSong" Member="Song" ThisKey="IdSong" OtherKey="IdSong" Type="Song" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,18 @@
+﻿<Page x:Class="BandDatabaser.BandAdittionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BandDatabaser"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="550"
+      Title="SearchPage">
+
+    <Grid>
+        <TextBox x:Name="BandNameBox" Margin="0,185,0,0" TextWrapping="Wrap" Text="Band Name" RenderTransformOrigin="0.513,-1.368" HorizontalAlignment="Center" Width="270" Height="23" VerticalAlignment="Top" GotFocus="BandNameBox_GotFocus" LostFocus="BandNameBox_LostFocus"/>
+        <Button x:Name="AddButton" Content="Add ✍️" Margin="228,333,228,0" VerticalAlignment="Top" Width="94" Height="23" RenderTransformOrigin="0.514,0.657" Click="AddButton_Click"/>
+        <Label Content="Bandname ✒️:" HorizontalAlignment="Center" Margin="0,154,0,0" VerticalAlignment="Top" Width="270"/>
+        <TextBox x:Name="FoundationYearBox" Margin="0,256,0,0" TextWrapping="Wrap" Text="Year" RenderTransformOrigin="0.546,-4.302" HorizontalAlignment="Center" Width="270" Height="23" VerticalAlignment="Top" GotFocus="FoundationYearBox_GotFocus" />
+        <Label Content="Foundation year 📆:" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top" Width="270"/>
+    </Grid>
+</Page>

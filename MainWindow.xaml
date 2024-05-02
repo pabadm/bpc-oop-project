@@ -1,0 +1,23 @@
+﻿<Window x:Class="BandDatabaser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BandDatabaser"
+        mc:Ignorable="d"
+        Title="BandDatabaser" MinHeight="450" MinWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FFF4F4F5" Stroke="Black" Margin="0,0,10,0" RenderTransformOrigin="0.472,0.5" Grid.ColumnSpan="2"/>
+        <Button Content="Add band 🎤🎸" Margin="135,5,544,0" Width="120" MinHeight="20" Click="Button_Click" Height="35" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Bands 🎺🥁" Margin="10,5,669,0" VerticalAlignment="Top" Width="120" MinHeight="20" Height="35" Click="Button_Click" Grid.Column="1"/>
+        <Frame x:Name="MainFrame"  NavigationUIVisibility="Hidden" Grid.Column="1" Margin="0,50,0,0"/>
+        <Button Content="🔽 Import 🔽" Margin="544,5,135,0" Width="120" MinHeight="20" Click="Button_Click" Height="35" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="🔼 Export 🔼" Margin="669,5,10,0" Width="120" MinHeight="20" Click="Button_Click" Height="35" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="BandDB library ♪" Margin="399,5,400,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+
+    </Grid>
+</Window>

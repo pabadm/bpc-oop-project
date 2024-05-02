@@ -1,0 +1,4 @@
+SELECT * FROM Band
+SELECT * FROM Album
+SELECT * FROM Song
+SELECT * FROM BandAlbumSong
